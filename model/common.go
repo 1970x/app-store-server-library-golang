@@ -2,6 +2,12 @@ package model
 
 import "github.com/golang-jwt/jwt/v5"
 
+// prepare header structure contains algorithm and token type
+type JWSHeader struct {
+	Alg string   `json:"alg"`
+	X5c []string `json:"x5c"`
+}
+
 // Notification signed payload
 type NotificationPayload struct {
 	jwt.RegisteredClaims
